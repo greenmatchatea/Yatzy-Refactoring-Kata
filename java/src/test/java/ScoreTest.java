@@ -25,22 +25,26 @@ public class ScoreTest {
 
     @Test
     public void test_given_roll_in_category_twos() {
-        assertEquals(10, new Twos().calculate(2, 2, 2, 2, 2));
+        assertEquals(4, new Twos().calculate(new int[]{2, 3, 2, 5, 1}));
+        assertEquals(0, new Twos().calculate(new int[]{3, 3, 3, 4, 5}));
     }
 
     @Test
     public void test_given_roll_in_category_threes() {
-        assertEquals(15, new Threes().calculate(3, 3, 3, 3, 3));
+        assertEquals(0, new Threes().calculate(new int[]{1, 1, 2, 4, 4}));
+        assertEquals(9, new Threes().calculate(new int[]{3, 3, 3, 4, 5}));
     }
 
     @Test
     public void test_given_roll_in_category_fours() {
-        assertEquals(20, new Fours().calculate(4, 4, 4, 4, 4));
+        assertEquals(8, new Fours().calculate(new int[]{1, 1, 2, 4, 4}));
+        assertEquals(0, new Fours().calculate(new int[]{2, 3, 2, 5, 1}));
     }
 
     @Test
     public void test_given_roll_in_category_fives() {
-        assertEquals(25, new Fives().calculate(5, 5, 5, 5, 5));
+        assertEquals(0, new Fives().calculate(new int[]{1, 1, 2, 4, 4}));
+        assertEquals(5, new Fives().calculate(new int[]{2, 3, 2, 5, 1}));
     }
 
     @Test
