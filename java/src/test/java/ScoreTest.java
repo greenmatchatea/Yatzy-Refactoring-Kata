@@ -50,7 +50,7 @@ public class ScoreTest {
     @Test
     public void test_given_roll_in_category_sixes() {
         assertEquals(6, new Sixes().calculate(new int[]{1, 1, 3, 3, 6}));
-        assertEquals(0, new Fives().calculate(new int[]{2, 3, 2, 5, 1}));
+        assertEquals(0, new Sixes().calculate(new int[]{2, 3, 2, 5, 1}));
     }
 
     @Test
@@ -69,12 +69,16 @@ public class ScoreTest {
 
     @Test
     public void test_given_roll_in_category_three_of_a_kind() {
-        assertEquals(9, new ThreeOfAKind().calculate(3, 3, 3, 4, 5));
+        assertEquals(9, new ThreeOfAKind().calculate(new int[]{3, 3, 3, 4, 5}));
+        assertEquals(0, new ThreeOfAKind().calculate(new int[]{3, 3, 4, 5, 6}));
+        assertEquals(9, new ThreeOfAKind().calculate(new int[]{3, 3, 3, 3, 1}));
     }
 
     @Test
     public void test_given_roll_in_category_four_of_a_kind() {
-        assertEquals(8, new FourOfAKind().calculate(2, 2, 2, 2, 5));
+        assertEquals(8, new FourOfAKind().calculate(new int[]{2, 2, 2, 2, 5}));
+        assertEquals(0, new FourOfAKind().calculate(new int[]{2, 2, 2, 5, 5}));
+        assertEquals(8, new FourOfAKind().calculate(new int[]{2, 2, 2, 2, 2}));
     }
 
     @Test
