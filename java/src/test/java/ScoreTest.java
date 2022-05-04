@@ -49,12 +49,17 @@ public class ScoreTest {
 
     @Test
     public void test_given_roll_in_category_sixes() {
-        assertEquals(30, new Sixes().calculate(6, 6, 6, 6, 6));
+        assertEquals(6, new Sixes().calculate(new int[]{1, 1, 3, 3, 6}));
+        assertEquals(0, new Fives().calculate(new int[]{2, 3, 2, 5, 1}));
     }
 
     @Test
     public void test_given_roll_in_category_pairs() {
-        assertEquals(0, new Pairs().calculate(1, 2, 3, 4, 5));
+        assertEquals(0, new Pairs().calculate(new int[]{1, 2, 3, 4, 5}));
+        assertEquals(8, new Pairs().calculate(new int[]{3, 3, 3, 4, 4}));
+        assertEquals(12, new Pairs().calculate(new int[]{1, 1, 6, 2, 6}));
+        assertEquals(6, new Pairs().calculate(new int[]{3, 3, 3, 4, 1}));
+        assertEquals(6, new Pairs().calculate(new int[]{3, 3, 3, 3, 1}));
     }
 
     @Test
