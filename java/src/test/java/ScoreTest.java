@@ -7,17 +7,20 @@ public class ScoreTest {
 
     @Test
     public void test_given_roll_in_category_chance() {
-        assertEquals(15, new Chance().calculate(1, 2, 3, 4, 5));
+        assertEquals(14, new Chance().calculate(new int[]{1, 1, 3, 3, 6}));
+        assertEquals(21, new Chance().calculate(new int[]{4, 5, 5, 6, 1}));
     }
 
     @Test
     public void test_given_roll_in_category_yatzy() {
-        assertEquals(50, new Yatzy().calculate(1, 1, 1, 1, 1));
+        assertEquals(50, new Yatzy().calculate(new int[]{1, 1, 1, 1, 1}));
+        assertEquals(0, new Yatzy().calculate(new int[]{1, 1, 1, 2, 1}));
     }
 
     @Test
     public void test_given_roll_in_category_ones() {
-        assertEquals(5, new Ones().calculate(1, 1, 1, 1, 1));
+        assertEquals(2, new Ones().calculate(new int[]{1, 1, 2, 4, 4}));
+        assertEquals(0, new Ones().calculate(new int[]{3, 3, 3, 4, 5}));
     }
 
     @Test
