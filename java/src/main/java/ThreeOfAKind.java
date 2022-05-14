@@ -1,6 +1,6 @@
 public class ThreeOfAKind extends CategoryNumberOfAKind {
 
-    private static final int CATEGORY_NUMBER_OF_A_KIND = 3;
+    public static final int CATEGORY_NUMBER_OF_A_KIND = 3;
 
     ThreeOfAKind() {
         super(CATEGORY_NUMBER_OF_A_KIND);

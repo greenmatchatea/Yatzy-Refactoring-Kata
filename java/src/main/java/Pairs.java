@@ -1,5 +1,5 @@
 public class Pairs extends CategoryNumberOfAKind {
-    private static final int CATEGORY_NUMBER_OF_A_KIND = 2;
+    public static final int CATEGORY_NUMBER_OF_A_KIND = 2;
 
     Pairs() {
         super(CATEGORY_NUMBER_OF_A_KIND);

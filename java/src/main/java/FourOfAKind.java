@@ -1,5 +1,5 @@
 public class FourOfAKind extends CategoryNumberOfAKind {
-    private static final int CATEGORY_NUMBER_OF_A_KIND = 4;
+    public static final int CATEGORY_NUMBER_OF_A_KIND = 4;
 
     FourOfAKind() {
         super(CATEGORY_NUMBER_OF_A_KIND);

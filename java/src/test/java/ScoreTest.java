@@ -64,7 +64,10 @@ public class ScoreTest {
 
     @Test
     public void test_given_roll_in_category_two_pairs() {
-        assertEquals(8, new TwoPairs().calculate(1, 1, 2, 3, 3));
+        assertEquals(8, new TwoPairs().calculate(new int[]{1, 1, 2, 3, 3}));
+        assertEquals(0, new TwoPairs().calculate(new int[]{1, 1, 2, 3, 4}));
+        assertEquals(6, new TwoPairs().calculate(new int[]{1, 1, 2, 2, 2}));
+        assertEquals(0, new TwoPairs().calculate(new int[]{3, 3, 3, 3, 1}));
     }
 
     @Test
@@ -83,17 +86,21 @@ public class ScoreTest {
 
     @Test
     public void test_given_roll_in_category_small_straight() {
-        assertEquals(15, new SmallStraight().calculate(1, 2, 3, 4, 5));
+        assertEquals(15, new SmallStraight().calculate(new int[]{1, 2, 3, 4, 5}));
+        assertEquals(0, new SmallStraight().calculate(new int[]{2, 3, 4, 5, 6}));
     }
 
     @Test
     public void test_given_roll_in_category_large_straight() {
-        assertEquals(20, new LargeStraight().calculate(2, 3, 4, 5, 6));
+        assertEquals(0, new LargeStraight().calculate(new int[]{1, 2, 3, 4, 5}));
+        assertEquals(20, new LargeStraight().calculate(new int[]{2, 3, 4, 5, 6}));
     }
 
     @Test
     public void test_given_roll_in_category_full_house() {
-        assertEquals(8, new FullHouse().calculate(1, 1, 2, 2, 2));
+        assertEquals(8, new FullHouse().calculate(new int[]{1, 1, 2, 2, 2}));
+        assertEquals(0, new FullHouse().calculate(new int[]{2, 2, 3, 3, 4}));
+        assertEquals(0, new FullHouse().calculate(new int[]{4, 4, 4, 4, 4}));
     }
 
     @Test
