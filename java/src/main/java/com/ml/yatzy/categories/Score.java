@@ -1,3 +1,5 @@
+package com.ml.yatzy.categories;
+
 public class Score {
 
     protected int[] dice;
